@@ -1,0 +1,93 @@
+/* Custom Styles for Raj's Portfolio */
+
+/* Smooth Scroll Behaviour */
+html {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #f89820 transparent;
+}
+
+/* Custom Scrollbar for modern browsers */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #f89820;
+    border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #d47a0f;
+}
+
+/* Terminal scrollbar styling */
+#terminal-body::-webkit-scrollbar {
+    width: 6px;
+}
+#terminal-body::-webkit-scrollbar-track {
+    background: #060913;
+}
+#terminal-body::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 4px;
+}
+#terminal-body::-webkit-scrollbar-thumb:hover {
+    background: #f89820;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.25s ease-out forwards;
+}
+
+/* Skill filters active state */
+.skill-filter-btn.active {
+    background-color: #f89820 !important;
+    color: white !important;
+    border-color: #f89820 !important;
+    box-shadow: 0 4px 14px 0 rgba(248, 152, 32, 0.3);
+}
+
+/* Java Code editor style additions */
+#code-block {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* Custom terminal pulses and details */
+.terminal-quick-btn {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* Smooth transition for theme colors */
+body, header, section, div, p, a, button, input, textarea {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Neon Glow Effect for Java Orange and Emerald Green */
+.glow-orange {
+    box-shadow: 0 0 20px rgba(248, 152, 32, 0.15);
+}
+
+.glow-emerald {
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.15);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    pre {
+        font-size: 11px !important;
+    }
+}

@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raj | Java Software Developer Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        javaOrange: '#f89820',
+                        javaBlue: '#5382a1',
+                        darkBg: '#0f172a',
+                        darkCard: '#1e293b',
+                    },
+                    fontFamily: {
+                        mono: ['JetBrains Mono', 'monospace'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-darkBg dark:text-slate-100 font-sans transition-colors duration-300 antialiased selection:bg-javaOrange selection:text-white">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-white/70 dark:bg-darkBg/70 border-b border-slate-200/50 dark:border-slate-800/50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#hero" class="flex items-center space-x-2 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-javaOrange to-red-500 flex items-center justify-center text-white font-mono font-bold text-lg shadow-md group-hover:scale-105 transition-transform">
+                    R
+                </div>
+                <span class="font-mono text-lg font-bold tracking-tight text-slate-800 dark:text-white">
+                    raj<span class="text-javaOrange">.java</span>
+                </span>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#about" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-javaOrange dark:hover:text-javaOrange transition-colors">About</a>
+                <a href="#skills" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-javaOrange dark:hover:text-javaOrange transition-colors">Skills</a>
+                <a href="#experience" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-javaOrange dark:hover:text-javaOrange transition-colors">Experience</a>
+                <a href="#projects" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-javaOrange dark:hover:text-javaOrange transition-colors">Projects</a>
+                <a href="#terminal" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-javaOrange dark:hover:text-javaOrange transition-colors flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Terminal
+                </a>
+                <a href="#contact" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-javaOrange dark:hover:text-javaOrange transition-colors">Contact</a>
+            </nav>
+
+            <!-- Right Controls (Theme Toggle + CTA) -->
+            <div class="hidden md:flex items-center space-x-4">
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors" aria-label="Toggle Theme">
+                    <i id="theme-icon" class="fas fa-moon"></i>
+                </button>
+                <a href="#contact" class="px-5 py-2.5 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-medium text-sm hover:bg-javaOrange dark:hover:bg-javaOrange dark:hover:text-white transition-all shadow-sm hover:shadow-lg hover:-translate-y-0.5 transform">
+                    Get in Touch
+                </a>
+            </div>
+
+            <!-- Mobile Menu & Theme Toggle Buttons -->
+            <div class="flex items-center space-x-2 md:hidden">
+                <button id="theme-toggle-mobile" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300" aria-label="Toggle Theme">
+                    <i id="theme-icon-mobile" class="fas fa-moon"></i>
+                </button>
+                <button id="mobile-menu-btn" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 focus:outline-none" aria-label="Toggle Menu">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-darkBg transition-all px-4 py-4 space-y-3">
+            <a href="#about" class="block px-4 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">About</a>
+            <a href="#skills" class="block px-4 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">Skills</a>
+            <a href="#experience" class="block px-4 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">Experience</a>
+            <a href="#projects" class="block px-4 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">Projects</a>
+            <a href="#terminal" class="block px-4 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">Terminal Simulator</a>
+            <a href="#contact" class="block px-4 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">Contact</a>
+            <div class="pt-2 border-t border-slate-100 dark:border-slate-800">
+                <a href="#contact" class="block w-full text-center px-4 py-2.5 rounded-lg bg-javaOrange text-white font-semibold">
+                    Hire Me
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-screen pt-24 md:pt-0 flex items-center justify-center overflow-hidden">
+        <!-- Background Decorative Gradients -->
+        <div class="absolute top-1/4 left-1/10 w-72 h-72 bg-javaOrange/10 rounded-full blur-3xl dark:bg-javaOrange/5 pointer-events-none"></div>
+        <div class="absolute bottom-1/4 right-1/10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl dark:bg-blue-500/5 pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <!-- Left Info Column -->
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-javaOrange/10 text-javaOrange border border-javaOrange/20 font-mono text-xs font-semibold uppercase tracking-wider">
+                    <span class="w-1.5 h-1.5 rounded-full bg-javaOrange animate-ping"></span> Available for Opportunities
+                </div>
+                
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">
+                    Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-javaOrange via-red-500 to-amber-500">Raj</span>
+                </h1>
+                
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-700 dark:text-slate-300 min-h-[40px]">
+                    I am a <span id="typing-text" class="text-javaOrange"></span><span class="animate-pulse">|</span>
+                </h2>
+
+                <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                    A passionate <strong class="text-slate-800 dark:text-slate-200">23-year-old Java Software Developer</strong> with <strong class="text-slate-800 dark:text-slate-200">1 year of industry experience</strong>. I specialize in building robust, high-performance, and scalable backend architectures using Spring Boot, JPA/Hibernate, and microservices.
+                </p>
+
+                <!-- Quick Stats -->
+                <div class="grid grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0 pt-4 pb-2">
+                    <div class="p-4 rounded-xl bg-white dark:bg-darkCard shadow-sm border border-slate-100 dark:border-slate-800">
+                        <div class="text-2xl sm:text-3xl font-extrabold text-javaOrange">1+</div>
+                        <div class="text-xs text-slate-500 dark:text-slate-400">Year Experience</div>
+                    </div>
+                    <div class="p-4 rounded-xl bg-white dark:bg-darkCard shadow-sm border border-slate-100 dark:border-slate-800">
+                        <div class="text-2xl sm:text-3xl font-extrabold text-javaOrange">15+</div>
+                        <div class="text-xs text-slate-500 dark:text-slate-400">Projects Built</div>
+                    </div>
+                    <div class="p-4 rounded-xl bg-white dark:bg-darkCard shadow-sm border border-slate-100 dark:border-slate-800">
+                        <div class="text-2xl sm:text-3xl font-extrabold text-javaOrange">23</div>
+                        <div class="text-xs text-slate-500 dark:text-slate-400">Years of Age</div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                    <a href="#projects" class="w-full sm:w-auto text-center px-8 py-3.5 rounded-xl bg-javaOrange hover:bg-orange-600 text-white font-semibold shadow-lg shadow-javaOrange/25 hover:shadow-xl hover:shadow-javaOrange/30 transition-all hover:-translate-y-0.5">
+                        <i class="fas fa-project-diagram mr-2"></i> View My Work
+                    </a>
+                    <a href="#contact" class="w-full sm:w-auto text-center px-8 py-3.5 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-semibold transition-all hover:-translate-y-0.5">
+                        <i class="fas fa-paper-plane mr-2"></i> Contact Me
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Interactive Java Code Column -->
+            <div class="lg:col-span-5 w-full">
+                <div class="rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white dark:bg-[#0B0F19] transition-all hover:shadow-javaOrange/10 duration-500">
+                    <!-- Window Header -->
+                    <div class="bg-slate-100 dark:bg-[#111827] px-4 py-3 flex items-center justify-between border-b border-slate-200 dark:border-slate-800">
+                        <div class="flex items-center space-x-2">
+                            <span class="w-3.5 h-3.5 rounded-full bg-rose-500 inline-block"></span>
+                            <span class="w-3.5 h-3.5 rounded-full bg-amber-400 inline-block"></span>
+                            <span class="w-3.5 h-3.5 rounded-full bg-emerald-500 inline-block"></span>
+                        </div>
+                        <span class="text-xs font-mono text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
+                            <i class="fab fa-java text-javaOrange text-sm"></i> Developer.java
+                        </span>
+                        <button class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors" id="run-code-btn" title="Click to execute!">
+                            <i class="fas fa-play text-emerald-500 animate-pulse"></i> <span class="text-[10px] uppercase font-bold ml-1">Run</span>
+                        </button>
+                    </div>
+                    <!-- Code Editor Content -->
+                    <div class="p-5 font-mono text-xs sm:text-sm overflow-x-auto leading-relaxed dark:text-slate-300 text-slate-700 h-[380px] flex flex-col justify-between">
+                        <pre id="code-block" class="whitespace-pre"><span class="text-purple-600 dark:text-purple-400">public class</span> <span class="text-blue-600 dark:text-blue-400">Developer</span> {
+    <span class="text-purple-600 dark:text-purple-400">private String</span> name = <span class="text-emerald-600 dark:text-emerald-400">"Raj"</span>;
+    <span class="text-purple-600 dark:text-purple-400">private int</span> age = <span class="text-amber-600 dark:text-amber-400">23</span>;
+    <span class="text-purple-600 dark:text-purple-400">private double</span> experienceYears = <span class="text-amber-600 dark:text-amber-400">1.0</span>;
+    <span class="text-purple-600 dark:text-purple-400">private String[]</span> stack = {<span class="text-emerald-600 dark:text-emerald-400">"Java"</span>, <span class="text-emerald-600 dark:text-emerald-400">"Spring Boot"</span>};
+
+    <span class="text-purple-600 dark:text-purple-400">public void</span> <span class="text-blue-600 dark:text-blue-400">printStatus</span>() {
+        System.out.println(<span class="text-emerald-600 dark:text-emerald-400">"Ready to build high-scale APIs!"</span>);
+        System.out.println(<span class="text-emerald-600 dark:text-emerald-400">"Experience: "</span> + experienceYears + <span class="text-emerald-600 dark:text-emerald-400">" yr"</span>);
+    }
+}</pre>
+                        
+                        <!-- Output Panel inside Code Box -->
+                        <div id="code-output" class="hidden mt-4 pt-3 border-t border-dashed border-slate-200 dark:border-slate-800">
+                            <div class="text-[10px] text-slate-400 uppercase font-bold tracking-wider mb-1">Console Output:</div>
+                            <div class="text-emerald-600 dark:text-emerald-400 font-mono text-xs">
+                                <p class="animate-bounce">⚡ Compiling Developer.java...</p>
+                                <p class="delay-300">✔ Build Successful (0.04s)</p>
+                                <p class="text-blue-500 dark:text-cyan-400 font-bold mt-1">"Ready to build high-scale APIs!"</p>
+                                <p class="text-blue-500 dark:text-cyan-400 font-bold">"Experience: 1.0 yr"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-slate-100 dark:bg-[#0B0F19]/60 border-y border-slate-200/50 dark:border-slate-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+                    About <span class="text-javaOrange">Me</span>
+                </h2>
+                <div class="w-16 h-1 bg-javaOrange mx-auto mt-4 rounded-full"></div>
+                <p class="mt-4 text-slate-600 dark:text-slate-400">
+                    Passionate software craftsman focusing on backend architectures, clean code, and solid design-patterns.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Left Details Grid -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="relative group">
+                        <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-javaOrange to-rose-500 opacity-30 blur group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+                        <div class="relative bg-white dark:bg-darkCard p-8 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-6">
+                            <h3 class="text-xl font-bold text-slate-800 dark:text-white flex items-center gap-2">
+                                <i class="fas fa-user-tie text-javaOrange"></i> Personal Information
+                            </h3>
+                            <ul class="space-y-4 text-sm font-mono">
+                                <li class="flex justify-between py-2 border-b border-slate-100 dark:border-slate-800">
+                                    <span class="text-slate-500 dark:text-slate-400">Full Name</span>
+                                    <span class="font-bold text-slate-800 dark:text-slate-200">Raj Kumar</span>
+                                </li>
+                                <li class="flex justify-between py-2 border-b border-slate-100 dark:border-slate-800">
+                                    <span class="text-slate-500 dark:text-slate-400">Age</span>
+                                    <span class="font-bold text-slate-800 dark:text-slate-200">23 Years Old</span>
+                                </li>
+                                <li class="flex justify-between py-2 border-b border-slate-100 dark:border-slate-800">
+                                    <span class="text-slate-500 dark:text-slate-400">Experience</span>
+                                    <span class="font-bold text-slate-800 dark:text-slate-200">1 Year Professional</span>
+                                </li>
+                                <li class="flex justify-between py-2 border-b border-slate-100 dark:border-slate-800">
+                                    <span class="text-slate-500 dark:text-slate-400">Role</span>
+                                    <span class="font-bold text-javaOrange">Java Software Developer</span>
+                                </li>
+                                <li class="flex justify-between py-2">
+                                    <span class="text-slate-500 dark:text-slate-400">Availability</span>
+                                    <span class="font-bold text-emerald-500">Open for Remote / Hybrid</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Description Paragraphs -->
+                <div class="lg:col-span-7 space-y-6">
+                    <h3 class="text-2xl font-bold text-slate-800 dark:text-white">
+                        My Core Philosophy: Building Robust, Scalable Backend Services
+                    </h3>
+                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                        I began my journey as a computer science enthusiast and quickly fell in love with Java's robust ecosystem, object-oriented principles, and reliable performance. With <strong class="text-slate-800 dark:text-slate-200">1 year of professional experience</strong> under my belt, I have successfully designed API endpoints, structured robust databases, and integrated modern tools to streamline development pipelines.
+                    </p>
+                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                        I enjoy working with <strong class="text-slate-800 dark:text-slate-200">Spring Boot</strong> and microservices, managing transaction logic, and optimizing queries for high performance. I believe in clean code, automated unit testing with JUnit/Mockito, and writing comprehensive API documentation using Swagger.
+                    </p>
+
+                    <!-- Professional Strengths -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-javaOrange/10 text-javaOrange flex items-center justify-center shrink-0">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 dark:text-white text-sm">Clean, Maintainable Code</h4>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Adhering strictly to SOLID principles and patterns.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-javaOrange/10 text-javaOrange flex items-center justify-center shrink-0">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 dark:text-white text-sm">Database Mastery</h4>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Optimized query structures, indexing, and Spring Data JPA.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-javaOrange/10 text-javaOrange flex items-center justify-center shrink-0">
+                                <i class="fas fa-vial"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 dark:text-white text-sm">Test-Driven Mindset</h4>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Ensuring high code-coverage and reliability via JUnit.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-javaOrange/10 text-javaOrange flex items-center justify-center shrink-0">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 dark:text-white text-sm">Agile Collaborator</h4>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Working smoothly with Git, CI/CD pipelines, and Scrum.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+                    Technical <span class="text-javaOrange">Skills</span>
+                </h2>
+                <div class="w-16 h-1 bg-javaOrange mx-auto mt-4 rounded-full"></div>
+                <p class="mt-4 text-slate-600 dark:text-slate-400">
+                    A comprehensive stack that I've used in real-world professional projects and personal applications.
+                </p>
+            </div>
+
+            <!-- Skill categories filter -->
+            <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-4 mb-12">
+                <button class="skill-filter-btn active px-5 py-2 rounded-xl text-sm font-semibold transition-all border border-slate-200 dark:border-slate-800 bg-white dark:bg-darkCard text-slate-700 dark:text-slate-300 hover:border-javaOrange" data-category="all">
+                    All Skills
+                </button>
+                <button class="skill-filter-btn px-5 py-2 rounded-xl text-sm font-semibold transition-all border border-slate-200 dark:border-slate-800 bg-white dark:bg-darkCard text-slate-700 dark:text-slate-300 hover:border-javaOrange" data-category="languages">
+                    Languages
+                </button>
+                <button class="skill-filter-btn px-5 py-2 rounded-xl text-sm font-semibold transition-all border border-slate-200 dark:border-slate-800 bg-white dark:bg-darkCard text-slate-700 dark:text-slate-300 hover:border-javaOrange" data-category="frameworks">
+                    Frameworks
+                </button>
+                <button class="skill-filter-btn px-5 py-2 rounded-xl text-sm font-semibold transition-all border border-slate-200 dark:border-slate-800 bg-white dark:bg-darkCard text-slate-700 dark:text-slate-300 hover:border-javaOrange" data-category="databases">
+                    Databases & Tools
+                </button>
+            </div>
+
+            <!-- Skills Grid -->
+            <div id="skills-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Skill 1: Java (Languages) -->
+                <div class="skill-card bg-white dark:bg-darkCard p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1" data-category="languages">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-orange-500/10 text-orange-500 flex items-center justify-center text-xl font-bold">
+                            <i class="fab fa-java text-2xl"></i>
+                        </div>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-orange-500/10 text-orange-500">Expert</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 dark:text-white">Java SE/EE</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Multi-threading, Streams API, Lambda, OOP</p>
+                    <div class="mt-4">
+                        <div class="flex justify-between text-xs font-semibold mb-1">
+                            <span>Proficiency</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                            <div class="bg-gradient-to-r from-orange-500 to-red-500 h-full rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill 2: Spring Boot (Frameworks) -->
+                <div class="skill-card bg-white dark:bg-darkCard p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1" data-category="frameworks">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-xl font-bold">
+                            <i class="fas fa-leaf text-2xl"></i>
+                        </div>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-500">Expert</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 dark:text-white">Spring Boot</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Auto-configuration, Spring Security, MVC</p>
+                    <div class="mt-4">
+                        <div class="flex justify-between text-xs font-semibold mb-1">
+                            <span>Proficiency</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                            <div class="bg-gradient-to-r from-emerald-500 to-teal-500 h-full rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill 3: Hibernate / JPA (Frameworks) -->
+                <div class="skill-card bg-white dark:bg-darkCard p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1" data-category="frameworks">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-500 flex items-center justify-center text-xl font-bold">
+                            <i class="fas fa-database text-2xl"></i>
+                        </div>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-blue-500/10 text-blue-500">Advanced</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 dark:text-white">Hibernate / JPA</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">ORM, Entity Mapping, HQL, JPQL, Caching</p>
+                    <div class="mt-4">
+                        <div class="flex justify-between text-xs font-semibold mb-1">
+                            <span>Proficiency</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                            <div class="bg-gradient-to-r from-blue-500 to-indigo-500 h-full rounded-full" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill 4: Spring Microservices (Frameworks) -->
+                <div class="skill-card bg-white dark:bg-darkCard p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1" data-category="frameworks">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-500 flex items-center justify-center text-xl font-bold">
+                            <i class="fas fa-cubes text-2xl"></i>
+                        </div>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-indigo-500/10 text-indigo-500">Intermediate</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 dark:text-white">Microservices</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Eureka, API Gateway, Config Server</p>
+                    <div class="mt-4">
+                        <div class="flex justify-between text-xs font-semibold mb-1">
+                            <span>Proficiency</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                            <div class="bg-gradient-to-r from-indigo-500 to-purple-500 h-full rounded-full" style="width: 70%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill 5: SQL / Relational DBs (Databases) -->
+                <div class="skill-card bg-white dark:bg-darkCard p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1" data-category="databases">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-500 flex items-center justify-center text-xl font-bold">
+                            <i class="fas fa-table text-2xl"></i>
+                        </div>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-cyan-500/10 text-cyan-500">Advanced</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 dark:text-white">MySQL & PostgreSQL</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Joins, Indexes, Schema Design, Transactions</p>
+                    <div class="mt-4">
+                        <div class="flex justify-between text-xs font-semibold mb-1">
+                            <span>Proficiency</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                            <div class="bg-gradient-to-r from-cyan-500 to-blue-500 h-full rounded-full" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill 6: Docker (Databases) -->
+                <div class="skill-card bg-white dark:bg-darkCard p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1" data-category="databases">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-500 flex items-center justify-center text-xl font-bold">
+                            <i class="fab fa-docker text-2xl"></i>
+                        </div>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-sky-500/10 text-sky-500">Intermediate</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 dark:text-white">Docker</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Dockerfiles, Compose, Containerization</p>
+                    <div class="mt-4">
+                        <div class="flex justify-between text-xs font-semibold mb-1">
+                            <span>Proficiency</span>
+                            <span>65%</span>
+                        </div>
+                        <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                            <div class="bg-gradient-to-r from-sky-500 to-blue-600 h-full rounded-full" style="width: 65%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill 7: Git & GitHub (Databases) -->
+                <div class="skill-card bg-white dark:bg-darkCard p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1" data-category="databases">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-slate-700/10 text-slate-700 dark:text-slate-300 flex items-center justify-center text-xl font-bold">
+                            <i class="fab fa-git-alt text-2xl text-[#f1502f]"></i>
+                        </div>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-700/10 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Advanced</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 dark:text-white">Git & Version Control</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Branching strategies, Pull Requests, Rebase</p>
+                    <div class="mt-4">
+                        <div class="flex justify-between text-xs font-semibold mb-1">
+                            <span>Proficiency</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                            <div class="bg-gradient-to-r from-[#f1502f] to-[#d63031] h-full rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill 8: RESTful APIs (Frameworks) -->
+                <div class="skill-card bg-white dark:bg-darkCard p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1" data-category="frameworks">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-rose-500/10 text-rose-500 flex items-center justify-center text-xl font-bold">
+                            <i class="fas fa-network-wired text-2xl"></i>
+                        </div>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-rose-500/10 text-rose-500">Expert</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 dark:text-white">RESTful API Design</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">JSON, HTTP Codes, Postman, Swagger/OpenAPI</p>
+                    <div class="mt-4">
+                        <div class="flex justify-between text-xs font-semibold mb-1">
+                            <span>Proficiency</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                            <div class="bg-gradient-to-r from-rose-500 to-red-500 h-full rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill 9: HTML/CSS/JavaScript (Languages) -->
+                <div class="skill-card bg-white dark:bg-darkCard p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1" data-category="languages">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-yellow-500/10 text-yellow-500 flex items-center justify-center text-xl font-bold">
+                            <i class="fab fa-js-square text-2xl"></i>
+                        </div>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-yellow-500/10 text-yellow-500">Intermediate</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 dark:text-white">Frontend Basics</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">HTML5, CSS3, ES6 JavaScript, DOM operations</p>
+                    <div class="mt-4">
+                        <div class="flex justify-between text-xs font-semibold mb-1">
+                            <span>Proficiency</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                            <div class="bg-gradient-to-r from-yellow-500 to-amber-500 h-full rounded-full" style="width: 70%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill 10: Testing - JUnit & Mockito (Databases) -->
+                <div class="skill-card bg-white dark:bg-darkCard p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1" data-category="databases">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-red-500/10 text-red-500 flex items-center justify-center text-xl font-bold">
+                            <i class="fas fa-check-double text-2xl"></i>
+                        </div>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-red-500/10 text-red-500">Advanced</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 dark:text-white">JUnit & Mockito</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Unit Testing, Integration Testing, Assertions</p>
+                    <div class="mt-4">
+                        <div class="flex justify-between text-xs font-semibold mb-1">
+                            <span>Proficiency</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                            <div class="bg-gradient-to-r from-red-500 to-rose-600 h-full rounded-full" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section id="experience" class="py-20 bg-slate-100 dark:bg-[#0B0F19]/60 border-y border-slate-200/50 dark:border-slate-800/50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+                    Work <span class="text-javaOrange">Experience</span>
+                </h2>
+                <div class="w-16 h-1 bg-javaOrange mx-auto mt-4 rounded-full"></div>
+                <p class="mt-4 text-slate-600 dark:text-slate-400">
+                    My professional track record building production-grade solutions.
+                </p>
+            </div>
+
+            <!-- Timeline Container -->
+            <div class="relative border-l-2 border-slate-200 dark:border-slate-800 pl-6 sm:pl-8 ml-2 sm:ml-4 space-y-12">
+                
+                <!-- Present Role -->
+                <div class="relative">
+                    <!-- Dot -->
+                    <div class="absolute -left-[35px] sm:-left-[43px] top-1.5 w-6 h-6 rounded-full bg-javaOrange border-4 border-white dark:border-darkBg flex items-center justify-center text-[10px] text-white">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    
+                    <!-- Content -->
+                    <div class="bg-white dark:bg-darkCard p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm transition-all hover:shadow-md">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                            <div>
+                                <span class="px-2.5 py-1 text-xs font-semibold rounded-full bg-javaOrange/10 text-javaOrange">Full-Time</span>
+                                <h3 class="text-xl font-bold text-slate-800 dark:text-white mt-2">Java Software Developer</h3>
+                                <p class="text-sm font-semibold text-slate-500 dark:text-slate-400">TechSoft Solutions Inc.</p>
+                            </div>
+                            <div class="text-right sm:text-right text-xs sm:text-sm font-mono text-slate-500 dark:text-slate-400">
+                                <i class="far fa-calendar-alt mr-1"></i> July 2023 - Present (1 Year)
+                            </div>
+                        </div>
+
+                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">
+                            As a junior Java software engineer, I was responsible for designing and optimizing server-side logic, developing clean and maintainable RESTful microservices, and enhancing database query performance.
+                        </p>
+
+                        <!-- Highlights -->
+                        <div class="space-y-3">
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400">Key Contributions & Achievements:</h4>
+                            <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-emerald-500 mt-1"><i class="fas fa-check-circle text-xs"></i></span>
+                                    <span>Designed and developed <strong>15+ active RESTful endpoints</strong> using Spring Boot, lowering UI integration efforts by 25%.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-emerald-500 mt-1"><i class="fas fa-check-circle text-xs"></i></span>
+                                    <span>Optimized complex SQL queries and Hibernate mappings, resulting in a <strong>30% reduction in API response latency</strong>.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-emerald-500 mt-1"><i class="fas fa-check-circle text-xs"></i></span>
+                                    <span>Wrote automated unit tests with JUnit 5 and Mockito, raising backend codebase coverage from 60% to <strong>85%</strong>.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-emerald-500 mt-1"><i class="fas fa-check-circle text-xs"></i></span>
+                                    <span>Collaborated in an Agile Scrum team of 6, participating in daily standups, code reviews, and sprint planning.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Tech Used Badge Grid -->
+                        <div class="flex flex-wrap gap-2 mt-6 pt-4 border-t border-slate-100 dark:border-slate-800">
+                            <span class="px-2 py-1 text-xs font-mono rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Java 17</span>
+                            <span class="px-2 py-1 text-xs font-mono rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Spring Boot</span>
+                            <span class="px-2 py-1 text-xs font-mono rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Hibernate</span>
+                            <span class="px-2 py-1 text-xs font-mono rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">PostgreSQL</span>
+                            <span class="px-2 py-1 text-xs font-mono rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Docker</span>
+                            <span class="px-2 py-1 text-xs font-mono rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">JUnit</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="relative">
+                    <!-- Dot -->
+                    <div class="absolute -left-[35px] sm:-left-[43px] top-1.5 w-6 h-6 rounded-full bg-blue-500 border-4 border-white dark:border-darkBg flex items-center justify-center text-[10px] text-white">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="bg-white dark:bg-darkCard p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm transition-all hover:shadow-md">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                            <div>
+                                <span class="px-2.5 py-1 text-xs font-semibold rounded-full bg-blue-500/10 text-blue-500">Degree</span>
+                                <h3 class="text-xl font-bold text-slate-800 dark:text-white mt-2">Bachelor of Technology in Computer Science</h3>
+                                <p class="text-sm font-semibold text-slate-500 dark:text-slate-400">State Technical University</p>
+                            </div>
+                            <div class="text-right sm:text-right text-xs sm:text-sm font-mono text-slate-500 dark:text-slate-400">
+                                <i class="far fa-calendar-alt mr-1"></i> 2019 - 2023
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Graduated with honors, focusing extensively on Data Structures, Algorithms, Object-Oriented Programming, and Database Management Systems. Led the university coding club and won 2 local hackathons.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+                    Featured <span class="text-javaOrange">Projects</span>
+                </h2>
+                <div class="w-16 h-1 bg-javaOrange mx-auto mt-4 rounded-full"></div>
+                <p class="mt-4 text-slate-600 dark:text-slate-400">
+                    Explore real-world projects that demonstrate robust architecture and modern backend paradigms.
+                </p>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project 1: E-Commerce REST API -->
+                <div class="group bg-white dark:bg-darkCard rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                    <div>
+                        <!-- Project Header Visual -->
+                        <div class="h-48 bg-gradient-to-br from-orange-500 to-rose-600 p-6 flex flex-col justify-between text-white relative overflow-hidden">
+                            <!-- Abstract Graphic -->
+                            <div class="absolute -right-10 -bottom-10 w-44 h-44 rounded-full bg-white/10 blur-xl pointer-events-none"></div>
+                            <div class="flex justify-between items-start">
+                                <span class="p-2.5 rounded-xl bg-white/20 backdrop-blur-md text-white">
+                                    <i class="fas fa-shopping-cart text-xl"></i>
+                                </span>
+                                <span class="text-xs font-mono bg-white/20 backdrop-blur-md px-2.5 py-1 rounded-full uppercase font-bold tracking-wider">
+                                    Spring Boot
+                                </span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold tracking-tight">ShopEase API</h3>
+                                <p class="text-xs text-white/80 font-mono mt-1">Enterprise E-Commerce Backend</p>
+                            </div>
+                        </div>
+
+                        <!-- Project Details -->
+                        <div class="p-6 space-y-4">
+                            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                                A high-performance RESTful API supporting a multi-vendor marketplace. Features include product cataloging, secure JWT login, and payment processor logic.
+                            </p>
+                            <div class="flex flex-wrap gap-1.5 pt-2">
+                                <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">Spring Boot</span>
+                                <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">Spring Security</span>
+                                <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">JPA/Hibernate</span>
+                                <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Actions -->
+                    <div class="p-6 pt-0 border-t border-slate-100 dark:border-slate-800/50 flex items-center justify-between gap-4">
+                        <button class="project-details-btn text-xs font-bold text-javaOrange hover:text-orange-600 transition-colors flex items-center gap-1" data-project="shopease">
+                            <i class="fas fa-info-circle"></i> Technical Details
+                        </button>
+                        <a href="#terminal" class="text-xs font-bold text-slate-600 dark:text-slate-400 hover:text-javaOrange transition-colors flex items-center gap-1">
+                            <i class="fas fa-terminal"></i> Simulate
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2: Microservice Task Manager -->
+                <div class="group bg-white dark:bg-darkCard rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                    <div>
+                        <!-- Project Header Visual -->
+                        <div class="h-48 bg-gradient-to-br from-blue-500 to-indigo-600 p-6 flex flex-col justify-between text-white relative overflow-hidden">
+                            <!-- Abstract Graphic -->
+                            <div class="absolute -right-10 -bottom-10 w-44 h-44 rounded-full bg-white/10 blur-xl pointer-events-none"></div>
+                            <div class="flex justify-between items-start">
+                                <span class="p-2.5 rounded-xl bg-white/20 backdrop-blur-md text-white">
+                                    <i class="fas fa-tasks text-xl"></i>
+                                </span>
+                                <span class="text-xs font-mono bg-white/20 backdrop-blur-md px-2.5 py-1 rounded-full uppercase font-bold tracking-wider">
+                                    Microservices
+                                </span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold tracking-tight">TaskFlow Engine</h3>
+                                <p class="text-xs text-white/80 font-mono mt-1">Distributed Task Scheduler</p>
+                            </div>
+                        </div>
+
+                        <!-- Project Details -->
+                        <div class="p-6 space-y-4">
+                            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                                A distributed microservices architecture for managing enterprise tasks. Incorporates Eureka Discovery, API Gateway routing, and asynchronous notifications.
+                            </p>
+                            <div class="flex flex-wrap gap-1.5 pt-2">
+                                <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">Spring Cloud</span>
+                                <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">Eureka Registry</span>
+                                <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">MySQL</span>
+                                <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">Docker</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Actions -->
+                    <div class="p-6 pt-0 border-t border-slate-100 dark:border-slate-800/50 flex items-center justify-between gap-4">
+                        <button class="project-details-btn text-xs font-bold text-javaOrange hover:text-orange-600 transition-colors flex items-center gap-1" data-project="taskflow">
+                            <i class="fas fa-info-circle"></i> Technical Details
+                        </button>
+                        <a href="#terminal" class="text-xs font-bold text-slate-600 dark:text-slate-400 hover:text-javaOrange transition-colors flex items-center gap-1">
+                            <i class="fas fa-terminal"></i> Simulate
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3: Library Management Console App & API -->
+                <div class="group bg-white dark:bg-darkCard rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                    <div>
+                        <!-- Project Header Visual -->
+                        <div class="h-48 bg-gradient-to-br from-purple-500 to-pink-600 p-6 flex flex-col justify-between text-white relative overflow-hidden">
+                            <!-- Abstract Graphic -->
+                            <div class="absolute -right-10 -bottom-10 w-44 h-44 rounded-full bg-white/10 blur-xl pointer-events-none"></div>
+                            <div class="flex justify-between items-start">
+                                <span class="p-2.5 rounded-xl bg-white/20 backdrop-blur-md text-white">
+                                    <i class="fas fa-book-reader text-xl"></i>
+                                </span>
+                                <span class="text-xs font-mono bg-white/20 backdrop-blur-md px-2.5 py-1 rounded-full uppercase font-bold tracking-wider">
+                                    Hibernate ORM
+                                </span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold tracking-tight">LibTrack System</h3>
+                                <p class="text-xs text-white/80 font-mono mt-1">Automated Library Manager</p>
+                            </div>
+                        </div>
+
+                        <!-- Project Details -->
+                        <div class="p-6 space-y-4">
+                            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                                A robust core Java backend integrated with Hibernate ORM to handle heavy library operations, transactions, member tracking, and fine calculation algorithms.
+                            </p>
+                            <div class="flex flex-wrap gap-1.5 pt-2">
+                                <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">Core Java</span>
+                                <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">Hibernate</span>
+                                <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">H2 Database</span>
+                                <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">Maven</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Actions -->
+                    <div class="p-6 pt-0 border-t border-slate-100 dark:border-slate-800/50 flex items-center justify-between gap-4">
+                        <button class="project-details-btn text-xs font-bold text-javaOrange hover:text-orange-600 transition-colors flex items-center gap-1" data-project="libtrack">
+                            <i class="fas fa-info-circle"></i> Technical Details
+                        </button>
+                        <a href="#terminal" class="text-xs font-bold text-slate-600 dark:text-slate-400 hover:text-javaOrange transition-colors flex items-center gap-1">
+                            <i class="fas fa-terminal"></i> Simulate
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Java Terminal / Spring Boot Simulator -->
+    <section id="terminal" class="py-20 bg-slate-900 border-t border-slate-800 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_center,rgba(248,152,32,0.05),transparent_60%)] pointer-events-none"></div>
+        
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-mono text-xs font-semibold mb-4">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span> Live Simulator
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+                    Interactive Java <span class="text-javaOrange">Terminal</span>
+                </h2>
+                <p class="mt-4 text-slate-400">
+                    Run simulated Java commands, spin up a mock Spring Boot server, and inspect Raj's database metrics in real time!
+                </p>
+            </div>
+
+            <!-- Terminal Widget -->
+            <div class="rounded-2xl border border-slate-800 bg-[#060913] shadow-2xl overflow-hidden max-w-4xl mx-auto">
+                <!-- Header -->
+                <div class="bg-[#0f1424] px-4 py-3 flex items-center justify-between border-b border-slate-800/80">
+                    <div class="flex items-center space-x-2">
+                        <span class="w-3 h-3 rounded-full bg-rose-500 inline-block"></span>
+                        <span class="w-3 h-3 rounded-full bg-amber-400 inline-block"></span>
+                        <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
+                    </div>
+                    <span class="text-xs font-mono text-slate-400 flex items-center gap-1.5">
+                        <i class="fas fa-terminal text-xs"></i> raj@ubuntu-server:~/portfolio
+                    </span>
+                    <div class="flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <span class="text-[10px] font-mono text-slate-400 uppercase tracking-widest">Connected</span>
+                    </div>
+                </div>
+
+                <!-- Quick Buttons for Commands -->
+                <div class="bg-[#0a0e1a] px-4 py-2 border-b border-slate-800/50 flex flex-wrap gap-2 items-center text-xs">
+                    <span class="text-slate-500 font-mono mr-1">Quick Commands:</span>
+                    <button class="terminal-quick-btn px-2.5 py-1 rounded bg-slate-800 hover:bg-javaOrange hover:text-white text-slate-300 font-mono transition-all" data-cmd="help">help</button>
+                    <button class="terminal-quick-btn px-2.5 py-1 rounded bg-slate-800 hover:bg-javaOrange hover:text-white text-slate-300 font-mono transition-all" data-cmd="java -version">java -version</button>
+                    <button class="terminal-quick-btn px-2.5 py-1 rounded bg-slate-800 hover:bg-javaOrange hover:text-white text-slate-300 font-mono transition-all" data-cmd="springboot run">springboot run</button>
+                    <button class="terminal-quick-btn px-2.5 py-1 rounded bg-slate-800 hover:bg-javaOrange hover:text-white text-slate-300 font-mono transition-all" data-cmd="db-status">db-status</button>
+                    <button class="terminal-quick-btn px-2.5 py-1 rounded bg-slate-800 hover:bg-javaOrange hover:text-white text-slate-300 font-mono transition-all" data-cmd="skills">skills</button>
+                    <button class="terminal-quick-btn px-2.5 py-1 rounded bg-slate-800 hover:bg-rose-600 hover:text-white text-slate-300 font-mono transition-all" data-cmd="clear">clear</button>
+                </div>
+
+                <!-- Terminal Display / Console -->
+                <div id="terminal-body" class="p-6 font-mono text-xs sm:text-sm text-slate-300 h-[380px] overflow-y-auto space-y-3 scrollbar-thin">
+                    <div class="text-slate-500">// Welcome to Raj's Interactive Java Developer Console.</div>
+                    <div class="text-slate-500">// Type a command below or click one of the quick command buttons above.</div>
+                    <div>Type <span class="text-javaOrange font-bold">help</span> to view all available commands.</div>
+                    <div class="text-slate-400">raj@ubuntu:~$ <span class="text-white">_</span></div>
+                </div>
+
+                <!-- Terminal Input Form -->
+                <form id="terminal-form" class="bg-[#080c16] px-6 py-3 border-t border-slate-800 flex items-center gap-2">
+                    <span class="text-javaOrange font-mono text-sm font-bold shrink-0">raj@ubuntu:~$</span>
+                    <input type="text" id="terminal-input" class="bg-transparent text-white font-mono text-sm focus:outline-none w-full" autocomplete="off" placeholder="Type command here..." autofocus>
+                    <button type="submit" class="text-slate-500 hover:text-javaOrange transition-colors px-2">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+                    Get In <span class="text-javaOrange">Touch</span>
+                </h2>
+                <div class="w-16 h-1 bg-javaOrange mx-auto mt-4 rounded-full"></div>
+                <p class="mt-4 text-slate-600 dark:text-slate-400">
+                    Have a remote opening, an exciting backend project, or just want to chat about Java? Drop a message!
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+                <!-- Left Details Info -->
+                <div class="lg:col-span-5 space-y-6 flex flex-col justify-between">
+                    <div class="bg-white dark:bg-darkCard p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-8 flex-1">
+                        <h3 class="text-xl font-bold text-slate-800 dark:text-white">Contact Channels</h3>
+                        
+                        <div class="space-y-6">
+                            <!-- Email -->
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-javaOrange/10 text-javaOrange flex items-center justify-center shrink-0">
+                                    <i class="fas fa-envelope text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-500 dark:text-slate-400 text-xs uppercase tracking-wider">Email Me</h4>
+                                    <a href="mailto:raj.java.developer@gmail.com" class="text-slate-800 dark:text-slate-200 font-semibold hover:text-javaOrange transition-colors mt-1 block">
+                                        raj.java.developer@gmail.com
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Location -->
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-javaOrange/10 text-javaOrange flex items-center justify-center shrink-0">
+                                    <i class="fas fa-map-marker-alt text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-500 dark:text-slate-400 text-xs uppercase tracking-wider">Location</h4>
+                                    <p class="text-slate-800 dark:text-slate-200 font-semibold mt-1">
+                                        New Delhi, India (Available for Remote / Hybrid)
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Age/Details -->
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-javaOrange/10 text-javaOrange flex items-center justify-center shrink-0">
+                                    <i class="fas fa-clock text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-500 dark:text-slate-400 text-xs uppercase tracking-wider">Timezone & Age</h4>
+                                    <p class="text-slate-800 dark:text-slate-200 font-semibold mt-1">
+                                        GMT +5:30 (IST) | 23 Years Old
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Handles -->
+                        <div class="pt-6 border-t border-slate-100 dark:border-slate-800">
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4">Connect on Socials</h4>
+                            <div class="flex gap-3">
+                                <a href="https://github.com" target="_blank" class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-javaOrange dark:hover:bg-javaOrange text-slate-600 dark:text-slate-300 hover:text-white dark:hover:text-white flex items-center justify-center transition-all hover:-translate-y-1">
+                                    <i class="fab fa-github text-lg"></i>
+                                </a>
+                                <a href="https://linkedin.com" target="_blank" class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-javaOrange dark:hover:bg-javaOrange text-slate-600 dark:text-slate-300 hover:text-white dark:hover:text-white flex items-center justify-center transition-all hover:-translate-y-1">
+                                    <i class="fab fa-linkedin-in text-lg"></i>
+                                </a>
+                                <a href="https://twitter.com" target="_blank" class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-javaOrange dark:hover:bg-javaOrange text-slate-600 dark:text-slate-300 hover:text-white dark:hover:text-white flex items-center justify-center transition-all hover:-translate-y-1">
+                                    <i class="fab fa-twitter text-lg"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Contact Form -->
+                <div class="lg:col-span-7">
+                    <form id="contact-form" class="bg-white dark:bg-darkCard p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="form-name" class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">Your Name</label>
+                                <input type="text" id="form-name" required class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50 focus:outline-none focus:border-javaOrange dark:focus:border-javaOrange focus:ring-1 focus:ring-javaOrange transition-colors text-sm" placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label for="form-email" class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">Your Email</label>
+                                <input type="email" id="form-email" required class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50 focus:outline-none focus:border-javaOrange dark:focus:border-javaOrange focus:ring-1 focus:ring-javaOrange transition-colors text-sm" placeholder="john@example.com">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="form-subject" class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">Subject</label>
+                            <input type="text" id="form-subject" required class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50 focus:outline-none focus:border-javaOrange dark:focus:border-javaOrange focus:ring-1 focus:ring-javaOrange transition-colors text-sm" placeholder="Job Opportunity / Project Quote">
+                        </div>
+
+                        <div>
+                            <label for="form-message" class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">Message</label>
+                            <textarea id="form-message" required rows="5" class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50 focus:outline-none focus:border-javaOrange dark:focus:border-javaOrange focus:ring-1 focus:ring-javaOrange transition-colors text-sm" placeholder="Hi Raj, we'd love to chat about..."></textarea>
+                        </div>
+
+                        <!-- Submission Status Display -->
+                        <div id="form-status" class="hidden p-4 rounded-xl text-sm font-mono flex items-center gap-3"></div>
+
+                        <button type="submit" class="w-full py-4 rounded-xl bg-javaOrange hover:bg-orange-600 text-white font-bold transition-all shadow-lg shadow-javaOrange/25 hover:shadow-xl hover:shadow-javaOrange/30 flex items-center justify-center gap-2">
+                            <i class="fas fa-paper-plane"></i> Send Message via SMTP
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-100 dark:bg-[#080c16] border-t border-slate-200 dark:border-slate-900 py-12 text-slate-500 dark:text-slate-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 rounded-lg bg-javaOrange flex items-center justify-center text-white font-mono font-bold text-sm">
+                    R
+                </div>
+                <span class="font-mono text-sm font-bold text-slate-800 dark:text-white">
+                    raj<span class="text-javaOrange">.java</span>
+                </span>
+            </div>
+            
+            <p class="text-center md:text-left text-xs sm:text-sm">
+                &copy; <span id="current-year"></span> Raj. All Rights Reserved. Crafted with <i class="fas fa-heart text-rose-500"></i> & Java Spirit.
+            </p>
+
+            <div class="flex space-x-6 text-xs sm:text-sm">
+                <a href="#about" class="hover:text-javaOrange transition-colors">About</a>
+                <a href="#skills" class="hover:text-javaOrange transition-colors">Skills</a>
+                <a href="#projects" class="hover:text-javaOrange transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-javaOrange transition-colors">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Technical Details Modal -->
+    <div id="details-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-sm hidden animate-fade-in">
+        <div class="bg-white dark:bg-darkCard rounded-2xl border border-slate-200 dark:border-slate-800 w-full max-w-2xl overflow-hidden shadow-2xl flex flex-col max-h-[90vh]">
+            <!-- Modal Header -->
+            <div class="bg-slate-100 dark:bg-[#111827] px-6 py-4 flex items-center justify-between border-b border-slate-200 dark:border-slate-800">
+                <h3 id="modal-title" class="text-lg font-bold text-slate-800 dark:text-white flex items-center gap-2"></h3>
+                <button id="close-modal" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-all p-1.5 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800">
+                    <i class="fas fa-times text-lg"></i>
+                </button>
+            </div>
+            
+            <!-- Modal Body (Scrollable) -->
+            <div class="p-6 overflow-y-auto space-y-6 text-slate-600 dark:text-slate-300 text-sm leading-relaxed" id="modal-body">
+                <!-- Content will be injected dynamically -->
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="bg-slate-50 dark:bg-[#111827]/50 px-6 py-4 border-t border-slate-200 dark:border-slate-800 flex justify-end gap-3">
+                <button id="close-modal-btn" class="px-5 py-2 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 font-semibold hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors">
+                    Close
+                </button>
+                <a id="modal-sim-link" href="#terminal" class="px-5 py-2 rounded-xl bg-javaOrange text-white font-semibold hover:bg-orange-600 transition-all">
+                    <i class="fas fa-terminal mr-1"></i> Simulate In Console
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>
